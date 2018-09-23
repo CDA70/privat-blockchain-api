@@ -31,11 +31,11 @@ For this project I used Express.js as the framework. More information and docume
 
     `node index.js`
 
-    ```javascript
+```javascript
     const express = require('express')
     const app = express()
     const port = 8000
-    ```
+```
     The API server is listening on port 8000 at localhost. http://localhost:8000
 
 ![port 8000](assets/server-port-8000.png "port 8000")
@@ -47,7 +47,7 @@ The response for the endpoint provides a block object in JSON format.
 
 `http://localhost:8000/block/0`
 
-    ``` json
+```json
     {
     "hash":"49cce61ec3e6ae664514d5fa5722d86069cf981318fc303750ce66032d0acff3",
     "height":0,
@@ -55,7 +55,7 @@ The response for the endpoint provides a block object in JSON format.
     "time":"1530311457",
     "previousBlockHash":""
     }
-    ```
+```
 
 CURL is used to test the GET endpoint in this project:
 
@@ -71,11 +71,11 @@ The repsonse for the endpoint is a block object in JSON format.
 
 `http://localhost:8000/block`
 
-    ``` json
+```json
     {
         "body": "Testing block with test string data"
     }
-    ```
+```
 
 CURL is used to test the POST endpoint in this project
 
@@ -86,17 +86,17 @@ CURL is used to test the POST endpoint in this project
     
 ## Criteria 5 - Handle error when there is an attempt to post without content
 
-    ```javascript
+```javascript
     if (req.body.body === undefined || req.body.body === '') {
             res.status(400).json({
                 "status": 400,
                 "message": 'The server returned a bad request! Block data cannot be empty, please fill out block!'})
 
         }
-    ```
+```
 `curl -X "POST" "http://localhost:8000/block" -H 'Content-Type: application/json' -d $'{"body":""}'`
 
-![Empty post](assets/curl-empty-post.png "Empty postt")
+![Empty post](assets/curl-empty-post.png "Empty post")
 
 
 
