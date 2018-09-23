@@ -38,7 +38,7 @@ For this project I used Express.js as the framework. More information and docume
 ```
     The API server is listening on port 8000 at localhost. http://localhost:8000
 
-![port 8000](assets/server-port-8000.png "port 8000")
+![port 8000](assets/server-port-8000.PNG "port 8000")
 
 ## Criteria 3 - GET Block Endpoint
 The GET Endpoint responds to a request using a URL with a block height parameter. An error is handled if the height parameter is out of bounds.
@@ -61,7 +61,7 @@ CURL is used to test the GET endpoint in this project:
 
 `curl http://localhost:8000/block/0`
 
-![GET Endpoint](assets/curl-get.png "GET endpoint")
+![GET Endpoint](assets/curl-get.PNG "GET endpoint")
 
 
 ## Criteria 4 - POST Block Endpoint
@@ -81,7 +81,7 @@ CURL is used to test the POST endpoint in this project
 
 `curl -X "POST" "http://localhost:8000/block" -H 'Content-Type: application/json' -d $'{"body":"content added to the blockchain"}'`
 
-![POST Endpoint](assets/curl-post.png "POST endpoint")
+![POST Endpoint](assets/curl-post.PNG "POST endpoint")
 
     
 ## Criteria 5 - Handle error when there is an attempt to post without content
@@ -96,7 +96,7 @@ CURL is used to test the POST endpoint in this project
 ```
 `curl -X "POST" "http://localhost:8000/block" -H 'Content-Type: application/json' -d $'{"body":""}'`
 
-![Empty post](assets/curl-empty-post.png "Empty post")
+![Empty post](assets/curl-empty-post.PNG "Empty post")
 
 
 
